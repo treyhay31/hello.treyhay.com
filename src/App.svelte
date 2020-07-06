@@ -1,5 +1,7 @@
 <script>
+	import Thing from "./components/Thing/Thing.svelte";
 	export let name;
+	export let things;
 </script>
 
 <header>
@@ -12,15 +14,9 @@
 		</h2>
 		<p>Here are a few things you might find interesting... I hope.</p>
 		<section>
-			<div class="thing thing-1"><h3>
-				Powershell
-			</h3></div>
-			<div class="thing thing-2"><h3>
-				Family
-			</h3></div>
-			<div class="thing thing-3"><h3>
-				Portfolio
-			</h3></div>
+			{#each things as thing}
+				<Thing name={thing} />
+			{/each}
 		</section>
 	</content>	
 </main>
