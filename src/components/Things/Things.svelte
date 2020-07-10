@@ -1,28 +1,48 @@
 <script>
-	export let things;
+  import { draw, fade } from 'svelte/transition';
+  import { onMount } from 'svelte';
+  export let things;
+  let visible = false;
+  onMount(async () => {
+		visible = true
+	});
+
 </script>
 
-<div class="things">
-  {#each things as thing}
-    <div class="thing thing-{thing.id}">
-      <a href={thing.url}>
-        <h3>
-          {thing.name}
-        </h3>
-      </a>
-    </div>
-  {/each}
-</div>
+{#if visible}
+  <div class="things">
+    {#each things as thing, i}
+      <div in:fade="{{duration: 750, delay: i * 250}}" class="thing thing-{thing.id}">
+        <a href={thing.url}>
+          <h3>
+            {thing.name}
+          </h3>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black">
+            <path d="M0 0h24v24H0V0z" fill="none"/>
+            <path in:fade="{{duration: 750, delay: i * 250 + 1250}}" d={thing.svg}/>
+          </svg>
+        </a>
+      </div>
+    {/each}
+  </div>
+{/if}
 
 <style>
 	.things {
     position: relative;
-    margin-top: 5rem;
+    margin-top: 10rem;
     width: fit-content;
     display: grid;
     grid-template-columns: repeat(5, 1fr)
   }
-
+  svg {
+    width: 10rem;
+    height: 10rem;
+    fill: var(--color-font-primary);
+    /* fill: transparent; */
+    transform: translateY(-2rem);
+    transition: all .4s;
+  }
   .thing {
     border: 1px solid rgba(220, 220, 220, 0.420);
     border-radius: 3px;
@@ -45,16 +65,20 @@
     align-content: center;
     justify-items: center;
     justify-content: center;
+    transition: all .4s;
+  }
+  a:active > svg {
+    transform: translateY(-2rem) translateY(0.4rem) translateX(-0.2rem);
   }
   h3 {
     transition: all .4s;
     color: transparent;
     font-weight: 200;
   }
+  
   .thing:hover > a > h3 {
-    color: pink;
-    background-color: radial-gradient(green, rgba(blue, 0.3));
-    transform: scale(3) translateY(-5rem);
+    color: var(--color-font-primary);
+    transform: scale(3) translateY(-2.5rem);
   }
   .thing:hover {
     cursor: pointer;
@@ -73,14 +97,13 @@
     z-index: 2; 
     transform: translateY(2rem);
     background-color: var(--color-2);
-    margin-bottom: 5rem;
   }
   .thing-3 {
-    z-index: 5; 
+    z-index: 3; 
     background-color: var(--color-3);
   }
   .thing-4 {
-    z-index: 3; 
+    z-index: 2; 
     transform: translateY(2rem);
     background-color: var(--color-2);
   }

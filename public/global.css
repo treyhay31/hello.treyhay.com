@@ -22,6 +22,7 @@
   --color-background-alt-primary: rgb(230, 172, 172);
   --color-background-alt-secondary: rgb(144, 175, 231);
   --basic-shadow: 11px 9px 21px -12px rgba(0, 0, 0, 0.66);
+  --heavy-shadow: 11px 9px 21px -12px rgba(0, 0, 0, 0.95);
   --color-1: #e09f7d;
   --color-2: #ef5d60;
   --color-3: #ec4067;
@@ -57,7 +58,7 @@ body {
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
-  position: fixed;
+  /* position: fixed; */
 }
 
 body::selection {

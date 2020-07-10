@@ -7,7 +7,7 @@
 <header>
 	<div class="header">
 		<h1>Hello {name}!</h1>
-		<h2>It is nice to see you!</h2>
+		<h2>It's nice to see you!</h2>
 	</div>
 </header>
 <main>
@@ -18,7 +18,12 @@
 		</section>
 	</content>	
 </main>
-
+<footer>
+	<div class="footer">
+		<h1>Goodbye Now!</h1>
+		<h2>It was nice to seeing you!</h2>
+	</div>
+</footer>
 <style>
 
 	header {
@@ -29,11 +34,11 @@
 	}
 
 	.header {
-		padding-top: 17.5vh;
+		padding-top: 19vh;
 		height: 100%;
 		width: 100%;
 		clip-path: ellipse(40% 35% at 50% 55%);
-		/* background-color: var(--color-background-alt-primary); */
+		background-color: var(--color-background-alt-primary);
 	}
 
 	main {
@@ -70,9 +75,14 @@
 		-webkit-background-clip: text;
 		background-clip: text;
 	}
+	
 	h3:hover {
 		transform: skewY(-7deg) scale(1.4) skewX(1deg);
+		-webkit-box-shadow: var(--heavy-shadow);
+    -moz-box-shadow: var(--heavy-shadow);
+    box-shadow: var(--heavy-shadow);
 	}
+
 	section {
 		padding: 5rem;
 		display: grid;
@@ -82,6 +92,14 @@
 		justify-content: center;
 		justify-items: center;
 	}
+
+	footer {
+		text-align: center;
+		padding: 10rem;
+		height: 50vh;
+		background-color: orangered;
+	}
+
 	@media (min-width: 640px) {
 		main {
 			max-width: none;
