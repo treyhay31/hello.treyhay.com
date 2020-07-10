@@ -1,20 +1,20 @@
 <script>
-	import Thing from "./components/Thing/Thing.svelte";
+	import Things from "./components/Things/Things.svelte";
 	export let name;
 	export let things;
 </script>
 
 <header>
-	<h1>Hello {name}!</h1>
-	<h2>It is nice to see you!</h2>
+	<div class="header">
+		<h1>Hello {name}!</h1>
+		<h2>It is nice to see you!</h2>
+	</div>
 </header>
 <main>
 	<content>
 		<h3>These are the things you should know...</h3>
 		<section>
-			{#each things as thing}
-				<Thing {...thing} />
-			{/each}
+			<Things things={things}/>
 		</section>
 	</content>	
 </main>
@@ -24,18 +24,22 @@
 	header {
 		text-align: center;
 		padding: 1rem;
-		margin: 5vh 5vw;
-		padding-top: 20vh;
 		height: 50vh;
+		/* background-color: pink; */
+	}
+
+	.header {
+		padding-top: 17.5vh;
+		height: 100%;
+		width: 100%;
 		clip-path: ellipse(40% 35% at 50% 55%);
-		background-color: var(--color-background-alt-primary);
+		/* background-color: var(--color-background-alt-primary); */
 	}
 
 	main {
 		text-align: center;
-		padding: 1rem 10rem;
-		max-width: 24rem;
-		margin: 0 auto;
+		width: 100%;
+		/* background-color: var(--color-background-primary); */
 	}
 
 	h1 {
@@ -53,6 +57,7 @@
 		letter-spacing: 1rem;
 	}
 	h3 {
+		transition: all .8s;
 		font-size: var(--size-font-big);
 		font-weight: 900;
 		display: inline-block;
@@ -65,11 +70,17 @@
 		-webkit-background-clip: text;
 		background-clip: text;
 	}
+	h3:hover {
+		transform: skewY(-7deg) scale(1.4) skewX(1deg);
+	}
 	section {
+		padding: 5rem;
 		display: grid;
-		grid-template-columns: repeat(5, 1fr);
-		grid-gap: -10rem;
-		transition: all .2s;
+		grid-template-columns: 1fr;
+		align-content: center;
+		align-items: center;
+		justify-content: center;
+		justify-items: center;
 	}
 	@media (min-width: 640px) {
 		main {

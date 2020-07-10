@@ -17,11 +17,16 @@
   --color-font-alt-secondary: rgb(0, 93, 243);
   --color-grey: rgb(99, 99, 99);
   --color-grey-dark: rgb(55, 55, 55);
-  --color-background-primary: rgba(216, 203, 21, 0.8);
-  --color-background-secondary: rgba(224, 65, 2, 0.8);
-  --color-background-alt-primary: rgb(230, 172, 172, 0.2);
-  --color-background-alt-secondary: rgb(144, 175, 231, 0.2);
-  /* --basic-shadow: 11px 9px 21px -12px rgba(0, 0, 0, 0.22); */
+  --color-background-primary: rgba(216, 203, 21);
+  --color-background-secondary: rgba(224, 65, 2);
+  --color-background-alt-primary: rgb(230, 172, 172);
+  --color-background-alt-secondary: rgb(144, 175, 231);
+  --basic-shadow: 11px 9px 21px -12px rgba(0, 0, 0, 0.66);
+  --color-1: #e09f7d;
+  --color-2: #ef5d60;
+  --color-3: #ec4067;
+  --color-4: #a01a7d;
+  --color-5: #311847;
 }
 
 html {
@@ -41,13 +46,14 @@ body {
   font-weight: 300;
   line-height: 1.6;
 
-  background-image: linear-gradient(
+  background: linear-gradient(
     to right bottom,
     var(--color-background-primary),
     var(--color-background-secondary)
   );
 
   height: 100vh;
+  width: 100vw;
   background-size: cover;
   background-position: top;
   background-repeat: no-repeat;

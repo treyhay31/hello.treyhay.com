@@ -5,11 +5,11 @@ const app = new App({
   props: {
     name: "there",
     things: [
-      { name: "Swig", url: "https://google.com" },
-      { name: "Powershell", url: "https://google.com" },
-      { name: "Family", url: "https://google.com" },
-      { name: "Portfolio", url: "https://google.com" },
-      { name: "Swag", url: "https://google.com" },
+      { id: 1, name: "Swig", url: "https://google.com" },
+      { id: 2, name: "Powershell", url: "https://google.com" },
+      { id: 3, name: "Family", url: "https://google.com" },
+      { id: 4, name: "Portfolio", url: "https://google.com" },
+      { id: 5, name: "Swag", url: "https://google.com" },
     ],
   },
 });
