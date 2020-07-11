@@ -1,19 +1,29 @@
 <script>
   import { draw, fade } from 'svelte/transition';
   import { onMount } from 'svelte';
+  // import Display from '../Display/Display.svelte';
   export let things;
-  let visible = false;
-  onMount(async () => {
-		visible = true
-	});
+  
+  let onDisplay = -1;
+  const putItOnDisplay = (itemIndex) => {
+    if (onDisplay > -1) {
+      onDisplay = -1 
+    } else {
+      onDisplay = itemIndex
+    }
+  }
 
+  let animateIn = false;
+  onMount(() => {
+		animateIn = true
+	});
 </script>
 
-{#if visible}
+{#if animateIn}
   <div class="things">
     {#each things as thing, i}
       <div in:fade="{{duration: 750, delay: i * 250}}" class="thing thing-{thing.id}">
-        <a href={thing.url}>
+        <a href={thing.url} on:click={() => putItOnDisplay(i)}>
           <h3>
             {thing.name}
           </h3>
@@ -24,10 +34,41 @@
         </a>
       </div>
     {/each}
+    {#if onDisplay > -1}
+      <div class="the-display" on:click={() => putItOnDisplay(-1)}>
+        <h4>
+          We On Display
+        </h4>
+        <ul>
+          <li>a</li>
+          <li>1</li>
+          <li>2</li>
+        </ul>
+      </div>
+    {/if}
   </div>
 {/if}
 
+
 <style>
+  .the-display {
+    overflow: hidden;
+    position: absolute;
+    top: -70vh;
+    left: -31vw;
+    height: 100vh;
+    width: 100vw;
+    background-color: blueviolet;
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+  }
 	.things {
     position: relative;
     margin-top: 10rem;

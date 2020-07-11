@@ -18,12 +18,7 @@
 		</section>
 	</content>	
 </main>
-<footer>
-	<div class="footer">
-		<h1>Goodbye Now!</h1>
-		<h2>It was nice to seeing you!</h2>
-	</div>
-</footer>
+
 <style>
 
 	header {
@@ -34,11 +29,14 @@
 	}
 
 	.header {
-		padding-top: 19vh;
+		padding-top: 16vh;
 		height: 100%;
 		width: 100%;
 		clip-path: ellipse(40% 35% at 50% 55%);
-		background-color: var(--color-background-alt-primary);
+		background: radial-gradient(
+			ellipse at center, 
+			var(--color-5) 40%, 
+			transparent 43%)
 	}
 
 	main {
@@ -48,19 +46,20 @@
 	}
 
 	h1 {
-		color: var(--color-font-primary);
+		color: var(--color-background-primary);
 		text-transform: uppercase;
 		font-size: var(--size-font-huge);
 		font-weight: 500;
 		letter-spacing: 1.3rem;
 	}
 	h2 {
-		color: var(--color-font-primary);
+		color: var(--color-background-primary);
 		text-transform: uppercase;
 		font-size: var(--size-font-big);
 		font-weight: 300;
 		letter-spacing: 1rem;
 	}
+
 	h3 {
 		transition: all .8s;
 		font-size: var(--size-font-big);
@@ -68,19 +67,17 @@
 		display: inline-block;
 		color: transparent;
 		background-image: linear-gradient(
-			to left, 
-			var(--color-grey),
-			var(--color-grey-dark)
+			to right, 
+			var(--color-font-primary),
+			var(--color-4)
 		);
 		-webkit-background-clip: text;
 		background-clip: text;
 	}
 	
 	h3:hover {
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.45);
 		transform: skewY(-7deg) scale(1.4) skewX(1deg);
-		-webkit-box-shadow: var(--heavy-shadow);
-    -moz-box-shadow: var(--heavy-shadow);
-    box-shadow: var(--heavy-shadow);
 	}
 
 	section {
@@ -91,13 +88,6 @@
 		align-items: center;
 		justify-content: center;
 		justify-items: center;
-	}
-
-	footer {
-		text-align: center;
-		padding: 10rem;
-		height: 50vh;
-		background-color: orangered;
 	}
 
 	@media (min-width: 640px) {
