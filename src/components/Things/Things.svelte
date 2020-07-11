@@ -1,7 +1,8 @@
 <script>
   import { draw, fade } from 'svelte/transition';
   import { onMount } from 'svelte';
-  // import Display from '../Display/Display.svelte';
+  import Display from '../Display/Display.svelte';
+  
   export let things;
   
   let onDisplay = -1;
@@ -35,14 +36,17 @@
       </div>
     {/each}
     {#if onDisplay > -1}
-      <div class="the-display" on:click={() => putItOnDisplay(-1)}>
+      <!-- <Display {...things[onDisplay].displayThings} svg={things[onDisplay].svg} /> -->
+      <div transition:fade class="the-display" on:click={() => putItOnDisplay(-1)}>
         <h4>
-          We On Display
+          {things[onDisplay].name}
         </h4>
         <ul>
-          <li>a</li>
-          <li>1</li>
-          <li>2</li>
+          {#each things[onDisplay].displayThings as displayThing, i}
+            <li class="display__item--item display__item--item-{i}">
+              <a class="display__item--link" href={displayThing.url}>{displayThing.name}</a>
+            </li>
+          {/each}
         </ul>
       </div>
     {/if}
@@ -58,10 +62,15 @@
     left: -31vw;
     height: 100vh;
     width: 100vw;
-    background-color: blueviolet;
+    background: linear-gradient(
+			to right bottom, 
+			var(--color-font-primary),
+			var(--color-4)
+    );
+    color: var(--color-background-primary);
+    
     display: grid;
     grid-template-columns: 1fr;
-    
     align-items: center;
     align-content: center;
     justify-items: center;
@@ -69,6 +78,36 @@
 
     z-index: 1000;
   }
+  .the-display h4 {
+    font-size: 10rem;
+    transform: translateY(-20rem) translateX(1rem) skewY(-14deg) skewX(-11deg);
+    letter-spacing: 2rem;
+  }
+  .the-display ul {
+    list-style: none;
+  }
+  .display__item--link {
+    font-size: 6rem;
+    font-weight: 300;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .display__item--link:link, .display__item--link:visited {
+    display: inline-block;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-image: linear-gradient(150deg, transparent 0%, transparent 50%, var(--color-1) 50%);
+    background-size: 250%;
+    transition: all .7s; }
+
+  .display__item--link:hover, .display__item--link:active {
+    background-position: 100%;
+    color: var(--color-4);
+    transform: translateX(1rem); }
+
+
 	.things {
     position: relative;
     margin-top: 10rem;

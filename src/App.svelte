@@ -35,7 +35,7 @@
 		clip-path: ellipse(40% 35% at 50% 55%);
 		background: radial-gradient(
 			ellipse at center, 
-			var(--color-5) 40%, 
+			var(--color-4) 40%, 
 			transparent 43%)
 	}
 
@@ -56,13 +56,13 @@
 		color: var(--color-background-primary);
 		text-transform: uppercase;
 		font-size: var(--size-font-big);
-		font-weight: 300;
+		font-weight: 400;
 		letter-spacing: 1rem;
 	}
 
 	h3 {
 		transition: all .8s;
-		font-size: var(--size-font-big);
+		font-size: var(--size-font-huge);
 		font-weight: 900;
 		display: inline-block;
 		color: transparent;
