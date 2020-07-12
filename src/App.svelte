@@ -46,14 +46,14 @@
 	}
 
 	h1 {
-		color: var(--color-background-primary);
+		color: var(--color-2);
 		text-transform: uppercase;
 		font-size: var(--size-font-huge);
 		font-weight: 500;
 		letter-spacing: 1.3rem;
 	}
 	h2 {
-		color: var(--color-background-primary);
+		color: var(--color-1);
 		text-transform: uppercase;
 		font-size: var(--size-font-big);
 		font-weight: 400;
@@ -67,9 +67,9 @@
 		display: inline-block;
 		color: transparent;
 		background-image: linear-gradient(
-			to right, 
-			var(--color-font-primary),
-			var(--color-4)
+			to left, 
+			var(--color-3),
+			var(--color-5)
 		);
 		-webkit-background-clip: text;
 		background-clip: text;

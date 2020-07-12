@@ -67,7 +67,7 @@
 			var(--color-font-primary),
 			var(--color-4)
     );
-    color: var(--color-background-primary);
+    color: var(--color-2);
     
     display: grid;
     grid-template-columns: 1fr;
@@ -79,8 +79,9 @@
     z-index: 1000;
   }
   .the-display h4 {
+    color: var(--color-0);
     font-size: 10rem;
-    transform: translateY(-20rem) translateX(1rem) skewY(-14deg) skewX(-11deg);
+    transform: translateY(-10rem) translateX(1rem) skewY(-14deg) skewX(-11deg);
     letter-spacing: 2rem;
   }
   .the-display ul {
@@ -98,15 +99,16 @@
     padding: 1rem 2rem;
     text-decoration: none;
     text-transform: uppercase;
-    background-image: linear-gradient(150deg, transparent 0%, transparent 50%, var(--color-1) 50%);
+    background-image: linear-gradient(145deg, transparent 0%, transparent 50%, var(--color-1) 50%);
     background-size: 250%;
-    transition: all .7s; }
+    transition: all .7s; 
+  }
 
   .display__item--link:hover, .display__item--link:active {
     background-position: 100%;
     color: var(--color-4);
-    transform: translateX(1rem); }
-
+    transform: translateX(1rem); 
+  }
 
 	.things {
     position: relative;
