@@ -35,9 +35,50 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
-@media only screen and (max-width: 75em) {
+
+@media (max-width: 1200px) {
   html {
-    font-size: 50%;
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    height: 300vh;
+  }
+  body {
+    height: 300vh;
+    background-repeat: repeat;
+  }
+}
+
+@media (max-width: 950px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+@media (max-width: 750px) {
+  html {
+    font-size: 35%;
+  }
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 28%;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 22%;
+  }
+}
+
+@media (max-width: 310px) {
+  html {
+    font-size: 15%;
   }
 }
 

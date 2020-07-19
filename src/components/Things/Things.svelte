@@ -57,9 +57,9 @@
 <style>
   .the-display {
     overflow: hidden;
-    position: absolute;
-    top: -70vh;
-    left: -31vw;
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 100vw;
     background: linear-gradient(
@@ -109,10 +109,10 @@
     color: var(--color-4);
     transform: translateX(1rem); 
   }
-
+  
 	.things {
     position: relative;
-    margin-top: 10rem;
+    margin-top: 4rem;
     width: fit-content;
     display: grid;
     grid-template-columns: repeat(5, 1fr)
@@ -193,5 +193,27 @@
     z-index: 1; 
     transform: translateY(4rem);
     background-color: var(--color-1);
+  }
+
+  @media (max-width: 950px) {
+    .things {
+      margin-top: 7rem;
+      position: relative;
+      grid-template-columns: 1fr 1fr;
+    }
+    .thing-1,
+    .thing-2,
+    .thing-3,
+    .thing-4,
+    .thing-5 {
+      transform: translateY(0);
+    }
+    .thing {
+      height: 40rem;
+      width: 40rem;
+      display:inline-block;
+      transition: all .4s;
+      margin: 4rem;
+    }
   }
 </style>

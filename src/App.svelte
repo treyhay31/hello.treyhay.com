@@ -20,12 +20,10 @@
 </main>
 
 <style>
-
 	header {
 		text-align: center;
 		padding: 1rem;
 		height: 50vh;
-		/* background-color: pink; */
 	}
 
 	.header {
@@ -52,6 +50,7 @@
 		font-weight: 500;
 		letter-spacing: 1.3rem;
 	}
+	
 	h2 {
 		color: var(--color-1);
 		text-transform: uppercase;
@@ -59,7 +58,7 @@
 		font-weight: 400;
 		letter-spacing: 1rem;
 	}
-
+	
 	h3 {
 		transition: all .8s;
 		font-size: var(--size-font-huge);
@@ -73,6 +72,7 @@
 		);
 		-webkit-background-clip: text;
 		background-clip: text;
+		max-width: 70vw;
 	}
 	
 	h3:hover {
@@ -81,13 +81,36 @@
 	}
 
 	section {
-		padding: 5rem;
+		padding: 2rem;
 		display: grid;
 		grid-template-columns: 1fr;
 		align-content: center;
 		align-items: center;
 		justify-content: center;
 		justify-items: center;
+	}
+	
+	@media (max-width: 950px) {
+		header {
+			text-align: center;
+			padding: 1rem;
+			height: 50vw;
+		}
+
+		.header {
+			padding-top: 17vw;
+			height: 50vw;
+			width: 100%;
+			clip-path: ellipse(40% 35% at 50% 55%);
+			background: radial-gradient(
+				ellipse at center, 
+				var(--color-4) 40%, 
+				transparent 43%)
+		}
+
+		h1,h2 {
+			letter-spacing: 0.75rem;
+		}
 	}
 
 	@media (min-width: 640px) {
