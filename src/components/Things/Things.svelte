@@ -28,9 +28,9 @@
           <h3>
             {thing.name}
           </h3>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black">
+          <svg class="thing-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black">
             <path d="M0 0h24v24H0V0z" fill="none"/>
-            <path in:fade="{{duration: 750, delay: i * 250 + 1250}}" d={thing.svg}/>
+            <path in:fade="{{duration: 750, delay: i * 250 + 1250}}" d={thing.svg} />
           </svg>
         </a>
       </div>
@@ -48,6 +48,10 @@
             </li>
           {/each}
         </ul>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black">
+          <path d="M0 0h24v24H0V0z" fill="none"/>
+          <path style="stroke:var(--color-0); stroke-width:0.1;" in:draw="{{duration: 7500}}" d={things[onDisplay].svg} />
+        </svg>
       </div>
     {/if}
   </div>
@@ -55,6 +59,7 @@
 
 
 <style>
+
   .the-display {
     overflow: hidden;
     position: fixed;
@@ -83,15 +88,26 @@
     font-size: 10rem;
     transform: translateY(-10rem) translateX(1rem) skewY(-14deg) skewX(-11deg);
     letter-spacing: 2rem;
+    z-index: 1002;
   }
   .the-display ul {
     list-style: none;
+    z-index: 1002;
+  }
+  .the-display svg {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    fill: var(--color-5);
+    z-index: 1001;
+    opacity: 0.1;
   }
   .display__item--link {
     font-size: 6rem;
     font-weight: 300;
     text-decoration: none;
     color: inherit;
+    z-index: 1002;
   }
 
   .display__item--link:link, .display__item--link:visited {
@@ -117,14 +133,14 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr)
   }
-  svg {
+  .thing-svg {
     width: 10rem;
     height: 10rem;
     fill: var(--color-font-primary);
-    /* fill: transparent; */
     transform: translateY(-2rem);
     transition: all .4s;
   }
+  
   .thing {
     border: 1px solid rgba(220, 220, 220, 0.420);
     border-radius: 3px;
