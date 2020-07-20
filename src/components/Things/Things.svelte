@@ -168,15 +168,23 @@
   a:active > svg {
     transform: translateY(-2rem) translateY(0.4rem) translateX(-0.2rem);
   }
-  h3 {
+  h3,
+  h3:link, 
+  h3:visited {
     transition: all .4s;
     color: transparent;
     font-weight: 200;
+    text-decoration: none;
   }
-  
   .thing:hover > a > h3 {
-    color: var(--color-font-primary);
+    padding: 1rem 2rem;
+    color: var(--color-0);
+    background: radial-gradient(
+      ellipse at center, 
+      var(--color-4) 40%, 
+      transparent 70%);
     transform: scale(3) translateY(-2.5rem);
+    text-decoration: none;
   }
   .thing:hover {
     cursor: pointer;
@@ -215,7 +223,7 @@
     .things {
       margin-top: 7rem;
       position: relative;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
     }
     .thing-1,
     .thing-2,
@@ -224,9 +232,15 @@
     .thing-5 {
       transform: translateY(0);
     }
+    .thing-1,.thing-5 {
+      position: absolute;
+      display: hidden;
+      height:0;
+      width: 0;
+    }
     .thing {
-      height: 40rem;
-      width: 40rem;
+      height: 50rem;
+      width: 50rem;
       display:inline-block;
       transition: all .4s;
       margin: 4rem;

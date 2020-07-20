@@ -44,10 +44,10 @@ html {
 
 @media (max-width: 1000px) {
   html {
-    height: 300vh;
+    height: calc(50vw + (3 * 35rem));
   }
   body {
-    height: 300vh;
+    height: calc(50vw + (3 * 35rem));
     background-repeat: repeat;
   }
 }
